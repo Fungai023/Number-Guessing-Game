@@ -1,3 +1,5 @@
-import tkinter as tk_gui
+import tkinter as tk
 
-window = tk_gui.Tk()
+window = tk.Tk()
+
+
