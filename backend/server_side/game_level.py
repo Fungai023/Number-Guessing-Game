@@ -21,8 +21,14 @@ class GameLevel():
     def level_Updater(self):
           if self.win :
             self.level += 1
+            
+#learn the art of mathematical progression
+    def level_checker(self):
+        if self.level % 5 == 0 :
+            if self.level < 10 and self.level > 5 :
+                self.guess_range
 
-    # def guess_updater(self):
+
          
         
     
