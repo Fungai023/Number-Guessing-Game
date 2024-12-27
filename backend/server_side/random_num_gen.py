@@ -2,7 +2,7 @@ import random
 
 class GuessNumGenarator():
     guess_list = []
-
+    guess = ""
     def __init__(self, guess_length , range_length):
         self.guess_length = guess_length
         self.range_length = range_length
@@ -16,6 +16,11 @@ class GuessNumGenarator():
       
     
     def string_guess(self):
-        return ",".join(self.guess_list)
+        word = ",".join(self.guess_list)
+        self.guess += word
+    
+
+    # def is_guess_correct():
+        
         
             
