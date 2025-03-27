@@ -27,7 +27,12 @@ The **Number Guessing Game** is designed to **enhance problem-solving and strate
 
 ### 🔹 1. Clone the Repository  
 ```sh
-  git clone <repo_url>
+  git clone git@github.com:skills/hello-github-actions.git  (SSH)
+  
+                             or
+                             
+  gh repo clone skills/hello-github-actions  (Github CLI)
+  
   cd number-guessing-game
 ```
 
