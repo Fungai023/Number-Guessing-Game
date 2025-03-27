@@ -27,25 +27,25 @@ The **Number Guessing Game** is designed to **enhance problem-solving and strate
 
 ### 🔹 1. Clone the Repository  
 ```sh
-git clone <repo_url>
-cd number-guessing-game
+  git clone <repo_url>
+  cd number-guessing-game
 ```
 
 ### 🔹 2. Install Dependencies  
 ```sh
-pip install -r requirements.txt
+  pip install -r requirements.txt
 ```
 
 ### 🔹 3. Start the Microservices  
 ```sh
-python service1.py  
-python service2.py  
-# Add more services as needed
+  python service1.py  
+  python service2.py  
+  # Add more services as needed
 ```
 
 ### 🔹 4. Launch the Game  
 ```sh
-python main.py
+  python main.py
 ```
 
 ---
@@ -59,4 +59,3 @@ python main.py
 
 ---
 
-Would you like any additional refinements? 😊
