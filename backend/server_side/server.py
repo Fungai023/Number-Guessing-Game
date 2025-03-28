@@ -17,10 +17,11 @@ class Server:
         connected = True
         while connected :
             message_length = connection.recv(self.HEADER).decode(self.format)
-            msg_length = int(message_length)
-            message = connection.recv(self.HEADER).decode(self.format)
-            if not connected:
-                break
+            if message_length != 0 :
+                msg_length = int(message_length)
+                message = connection.recv(self.HEADER).decode(self.format)
+                if not connected:
+                    break
             print(f"[MESSAGE] {address} : {message}")
 
         connection.close()
