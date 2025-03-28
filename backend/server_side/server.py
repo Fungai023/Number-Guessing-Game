@@ -1,22 +1,33 @@
 import socket
 import threading
 
-class Server():
-    port = 5050
-    server = socket.gethostbyname(socket.gethostname())
+class Server:
 
-    def __init__(self, port , server):
+    def __init__(self , server , port):
         self.port = port
         self.server = server
+        port = 5050
+        server = socket.gethostbyname(socket.gethostname())
         self.addr = (server , port)
+        self.format = "utf-8"
+        self.HEADER = 128
 
-    def client_handler(conn , address):
+    def client_handler(self , connection , address):
+        print(f"[NEW CONNECTION] form {address}")
         connected = True
         while connected :
-            message = conn.recv()
+            message_length = connection.recv(self.HEADER).decode(self.format)
+            msg_length = int(message_length)
+            message = connection.recv(self.HEADER).decode(self.format)
+            if not connected:
+                break
+            print(f"[MESSAGE] {address} : {message}")
+
+        connection.close()
 
     def receive_msg(self):
         pass
+
 
     def send_msg(self):
         pass
@@ -29,5 +40,5 @@ class Server():
             conn , address = server_conn.accept()
             thread = threading.Thread(target= self.client_handler , args= (conn , address) )
             thread.start()
-            print(f"ACTIVE CONNECTIONS  {threading.active_count()-1}")
+            print(f"ACTIVE CONNECTIONS :  {threading.active_count()-1}")
 
