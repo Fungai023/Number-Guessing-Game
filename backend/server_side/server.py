@@ -10,7 +10,15 @@ class Server():
         self.server = server
         self.addr = (server , port)
 
-    def client_handler(self):
+    def client_handler(conn , address):
+        connected = True
+        while connected :
+            message = conn.recv()
+
+    def receive_msg(self):
+        pass
+
+    def send_msg(self):
         pass
 
     def start(self):
@@ -19,6 +27,7 @@ class Server():
         server_conn.listen()
         while True :
             conn , address = server_conn.accept()
-            thread = threading.Thread(target= self.client_handler() , args= (conn , address) )
+            thread = threading.Thread(target= self.client_handler , args= (conn , address) )
             thread.start()
-            print(f"ACTIVE CONNECTIONS  {threading.active_count()}")
+            print(f"ACTIVE CONNECTIONS  {threading.active_count()-1}")
+
